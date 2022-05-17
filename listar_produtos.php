@@ -12,6 +12,28 @@
 </head>
 
 <body>
+
+   <?php
+
+   include 'conexao.php';
+
+   session_start();
+   $usuario = $_SESSION['usuario'];
+
+   if (!isset($_SESSION['usuario'])) {
+      header('Location: index.php');
+   }
+
+   $sql = "SELECT nivel_usuario FROM usuarios WHERE nome_usuario = '$usuario'";
+   $buscar = mysqli_query($conexao, $sql);
+
+
+   $array = mysqli_fetch_array($buscar);
+
+   $nivel = $array['nivel_usuario'];
+
+   ?>
+
    <div class="container" style="margin-top: 40px">
 
       <right>
@@ -52,11 +74,16 @@
             <td><?php echo $quantidadeestoque ?></td>
             <td><?php echo $marcaproduto ?></td>
             <td>
+               <?php
+               if ($nivel == 1) {
+               ?>
                <a class="btn btn-warning btn-sm" href="editar_produto.php?id=<?php echo $id_estoque ?>" role="button">
                   <i class="far fa-edit "></i>&nbsp;Editar</a>
                <a class="btn btn-danger btn-sm" href="deletar_produto.php?id=<?php echo $id_estoque ?>" role="button">
                   <i class="far fa-trash-alt "></i>&nbsp;Excluir</a>
             </td>
+            <?php
+               } ?>
 
          </tr>
          <?php

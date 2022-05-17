@@ -13,12 +13,43 @@
 
 <body>
 
+   <?php
+
+   include 'conexao.php';
+
+   session_start();
+   $usuario = $_SESSION['usuario'];
+
+   if (!isset($_SESSION['usuario'])) {
+      header('Location: index.php');
+   }
+
+   $sql = "SELECT nivel_usuario FROM usuarios WHERE nome_usuario = '$usuario'";
+   $buscar = mysqli_query($conexao, $sql);
+
+
+   $array = mysqli_fetch_array($buscar);
+
+   $nivel = $array['nivel_usuario'];
+
+
+
+
+
+   ?>
+
    <div class="container" style="margin-top: 100px">
+
+
       <center>
          <h3>CRUD Produtos, Categorias e Marcas</h3>
       </center>
 
       <div class="row">
+
+         <?php
+         if ($nivel == 1) {
+         ?>
 
          <div class="col-sm-6">
             <div class="card">
@@ -29,6 +60,14 @@
                </div>
             </div>
          </div>
+
+         <?php
+         } ?>
+
+         <?php
+         if (($nivel == 1) || ($nivel == 2)) {
+         ?>
+
          <div class="col-sm-6">
             <div class="card">
                <div class="card-body">
@@ -38,6 +77,13 @@
                </div>
             </div>
          </div>
+         <?php
+         } ?>
+
+
+         <?php
+         if ($nivel == 1) {
+         ?>
          <div class="col-sm-6" style=" margin-top: 20px">
             <div class="card">
                <div class="card-body">
@@ -48,6 +94,12 @@
                </div>
             </div>
          </div>
+         <?php
+         } ?>
+
+         <?php
+         if ($nivel == 1) {
+         ?>
          <div class="col-sm-6" style=" margin-top: 20px">
             <div class="card">
                <div class="card-body">
@@ -58,6 +110,8 @@
                </div>
             </div>
          </div>
+         <?php
+         } ?>
 
       </div>
 

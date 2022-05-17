@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Maio-2022 às 14:52
+-- Tempo de geração: 17-Maio-2022 às 16:06
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.29
 
@@ -81,9 +81,17 @@ INSERT INTO `marca` (`id_marca`, `marca`) VALUES
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(200) NOT NULL,
-  `senha_usuario` varchar(15) NOT NULL,
+  `senha_usuario` varchar(50) NOT NULL,
   `nivel_usuario` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nome_usuario`, `senha_usuario`, `nivel_usuario`) VALUES
+(1, 'Administrador', 'admin', 1),
+(2, 'Comum', 'comum', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -139,7 +147,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
