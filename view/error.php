@@ -8,7 +8,7 @@
    </center>
    <div style="padding-top: 20px">
       <center>
-         <a href="index.php" role="button" class="btn btn-sm btn-primary">Senha Incorreta, retorne ao login.</a>
+         <a href="../index.php" role="button" class="btn btn-sm btn-primary">Senha Incorreta, retorne ao login.</a>
       </center>
    </div>
 
