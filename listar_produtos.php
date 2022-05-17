@@ -37,7 +37,7 @@
    <div class="container" style="margin-top: 40px">
 
       <right>
-         <a href="index.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
+         <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
       </right>
 
       <h3>Lista de Produtos</h3>

@@ -37,7 +37,7 @@
          <button type="submit" id="button-cadastrar" class="btn btn-success">Cadastrar Marca</button>
 
          <div style="text-align: right; margin-top: -38px;">
-            <a href="index.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
+            <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
          </div>
 
 

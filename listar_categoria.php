@@ -13,33 +13,12 @@
 
 <body>
 
-   <?php
-
-   include 'conexao.php';
-
-   session_start();
-   $usuario = $_SESSION['usuario'];
-
-   if (!isset($_SESSION['usuario'])) {
-      header('Location: index.php');
-   }
-
-   $sql = "SELECT nivel_usuario FROM usuarios WHERE nome_usuario = '$usuario'";
-   $buscar = mysqli_query($conexao, $sql);
-
-
-   $array = mysqli_fetch_array($buscar);
-
-   $nivel = $array['nivel_usuario'];
-
-   ?>
-
 
 
    <div class="container" style="margin-top: 40px; width: 500px">
 
       <right>
-         <a href="index.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
+         <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
       </right>
 
       <h3>Lista de Categorias</h3>
@@ -66,9 +45,7 @@
          <tr>
             <td><?php echo $id_categoria ?></td>
             <td> <?php echo $categoria ?></td>
-            <?php
-               if ($nivel == 1) {
-            ?>
+
             <td>
                <a class="btn btn-warning btn-sm" href="editar_categoria.php?id=<?php echo $id_categoria ?>"
                   role="button">
@@ -77,8 +54,7 @@
                   role="button">
                   <i class="far fa-trash-alt "></i>&nbsp;Excluir</a>
             </td>
-            <?php
-               } ?>
+
 
 
          </tr>
