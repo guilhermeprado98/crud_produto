@@ -32,10 +32,6 @@
 
    $nivel = $array['nivel_usuario'];
 
-
-
-
-
    ?>
 
    <div class="container" style="margin-top: 100px">
@@ -115,7 +111,13 @@
 
       </div>
 
+      <div class="container" style="width: 400px; padding-top: 10px">
 
+         <center>
+            <a href="index.php" class="btn btn-sm btn-warning">Sair do Sistema</a>
+         </center>
+
+      </div>
 
    </div>
 
