@@ -122,7 +122,7 @@ require_once '../model/conexao.php';
       <div class="container" style="width: 400px; padding-top: 10px">
 
          <center>
-            <a href="index.php" class="btn btn-sm btn-warning">Sair do Sistema</a>
+            <a href="../index.php" class="btn btn-sm btn-warning">Sair do Sistema</a>
          </center>
 
       </div>
