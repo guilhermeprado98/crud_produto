@@ -38,7 +38,7 @@
          <img src="imagem/cadeado.png">
       </center>
 
-      <form action="index1.php" method="POST">
+      <form action="view/validar_login.php" method="POST">
          <div class="form-group">
             <label>Usuário</label>
             <input type="text" name="usuario" class="form-control" placeholder="Usuário" autocomplete="off" required>

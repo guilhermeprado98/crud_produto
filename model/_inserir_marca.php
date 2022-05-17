@@ -20,7 +20,7 @@ $inserir = mysqli_query($conexao, $sql);
 
    <center>
       <h3>Marca adicionada com sucesso!</h3>
-      <a href="adicionar_marca.php" class="btn btn-sm btn-warning">Voltar</a>
+      <a href="../view/adicionar_marca.php" class="btn btn-sm btn-warning">Voltar</a>
    </center>
 
 </div>

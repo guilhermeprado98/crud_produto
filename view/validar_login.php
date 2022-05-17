@@ -1,5 +1,6 @@
 <?php
-include 'conexao.php';
+
+require_once '../model/conexao.php';
 include 'script/password.php';
 
 

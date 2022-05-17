@@ -1,3 +1,10 @@
+<?php
+
+
+require_once '../model/conexao.php';
+
+?>
+
 <html>
 
 <head>
@@ -27,7 +34,7 @@
    <div class="container" id="tamanhoContainer" style="margin-top: 40px">
       <h4>Formulário de Cadastro para Produtos</h4>
 
-      <form action="_inserir_produto.php" method="post" style="margin-top: 20px;">
+      <form action="../model/_inserir_produto.php" method="post" style="margin-top: 20px;">
 
          <div class="form-group">
             <label>ID do Produto</label>
@@ -54,7 +61,7 @@
 
                <?php
 
-               include 'conexao.php';
+
                $sql = "SELECT * FROM categoria order by categoria ASC";
                $buscar = mysqli_query($conexao, $sql);
 

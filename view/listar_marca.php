@@ -1,8 +1,14 @@
+<?php
+
+require_once '../model/conexao.php';
+
+?>
+
 <html>
 
 <head>
 
-   <title>Listagem de Produtos</title>
+   <title>Listagem de Marcas</title>
    <meta name="viewport" content="initial-scale=1.0, user-scalabe=no" />
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,78 +19,45 @@
 </head>
 
 <body>
-
-   <?php
-
-   include 'conexao.php';
-
-   session_start();
-   $usuario = $_SESSION['usuario'];
-
-   if (!isset($_SESSION['usuario'])) {
-      header('Location: index.php');
-   }
-
-   $sql = "SELECT nivel_usuario FROM usuarios WHERE nome_usuario = '$usuario'";
-   $buscar = mysqli_query($conexao, $sql);
-
-
-   $array = mysqli_fetch_array($buscar);
-
-   $nivel = $array['nivel_usuario'];
-
-   ?>
-
-   <div class="container" style="margin-top: 40px">
+   <div class="container" style="margin-top: 40px; width: 500px">
 
       <right>
          <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
       </right>
 
-      <h3>Lista de Produtos</h3>
+      <h3>Lista de Marcas</h3>
       <br>
       <table class="table">
          <thead>
             <tr>
-               <th scope="col">ID Produto</th>
-               <th scope="col">Nome do Produto</th>
-               <th scope="col">Categoria</th>
-               <th scope="col">Quantidade</th>
-               <th scope="col">Marca</th>
+               <th scope="col">ID da Marca</th>
+               <th scope="col">Nome da Marca</th>
                <th scope="col">Ação</th>
             </tr>
          </thead>
          <tr>
             <?php
-            include 'conexao.php';
 
-            $sql = "SELECT * FROM `estoque`";
+
+            $sql = "SELECT * FROM `marca`";
             $busca = mysqli_query($conexao, $sql);
 
             while ($array = mysqli_fetch_array($busca)) {
-               $id_estoque = $array['id_estoque'];
-               $id_produto = $array['idproduto'];
-               $nomeproduto = $array['nomeproduto'];
-               $quantidadeestoque = $array['quantidadeestoque'];
-               $categoriaproduto = $array['categoriaproduto'];
-               $marcaproduto = $array['marcaproduto']; ?>
+               $id_marca = $array['id_marca'];
+               $marca = $array['marca'];
+            ?>
          <tr>
-            <td><?php echo $id_produto ?></td>
-            <td> <?php echo $nomeproduto ?></td>
-            <td><?php echo $categoriaproduto ?></td>
-            <td><?php echo $quantidadeestoque ?></td>
-            <td><?php echo $marcaproduto ?></td>
+            <td><?php echo $id_marca ?></td>
+            <td> <?php echo $marca ?></td>
+
             <td>
-               <?php
-               if ($nivel == 1) {
-               ?>
-               <a class="btn btn-warning btn-sm" href="editar_produto.php?id=<?php echo $id_estoque ?>" role="button">
+               <a class="btn btn-warning btn-sm" href="../model/editar_marca.php?id=<?php echo $id_marca ?>"
+                  role="button">
                   <i class="far fa-edit "></i>&nbsp;Editar</a>
-               <a class="btn btn-danger btn-sm" href="deletar_produto.php?id=<?php echo $id_estoque ?>" role="button">
+               <a class="btn btn-danger btn-sm" href="../model/deletar_marca.php?id=<?php echo $id_marca ?>"
+                  role="button">
                   <i class="far fa-trash-alt "></i>&nbsp;Excluir</a>
             </td>
-            <?php
-               } ?>
 
          </tr>
          <?php

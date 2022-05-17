@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $database = "formulario_estoque";
 $username = "root";

@@ -2,13 +2,13 @@
 
 include 'conexao.php';
 
-$id = $_POST['id_categoria'];
+$id = $_POST['id_marca'];
 
 //$idproduto = $_POST['idproduto'];
-$categoria = $_POST['categoria'];
+$marca = $_POST['marca'];
 
 
-$sql = "UPDATE `categoria` SET `categoria`='$categoria' WHERE id_categoria = $id";
+$sql = "UPDATE `marca` SET `marca` = '$marca' WHERE id_marca = $id";
 
 
 $atualizar = mysqli_query($conexao, $sql);
@@ -23,8 +23,8 @@ $atualizar = mysqli_query($conexao, $sql);
 <div class="container" style="width: 400px">
 
    <center>
-      <h3>Categoria atualizada com sucesso!</h3>
-      <a href="listar_categoria.php" class="btn btn-sm btn-warning">Voltar</a>
+      <h3>Marca atualizada com sucesso!</h3>
+      <a href="../view/listar_marca.php" class="btn btn-sm btn-warning">Voltar</a>
    </center>
 
 </div>

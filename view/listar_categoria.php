@@ -1,9 +1,17 @@
+<?php
+
+require_once '../model/conexao.php';
+
+?>
+
+
+
 <html>
 
 <head>
 
-   <title>Listagem de Marcas</title>
-   <meta name="viewport" content="initial-scale=1.0, user-scalabe=no" />
+   <title>Listagem de Categorias</title>
+
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -13,43 +21,49 @@
 </head>
 
 <body>
+
+
+
    <div class="container" style="margin-top: 40px; width: 500px">
 
       <right>
          <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
       </right>
 
-      <h3>Lista de Marcas</h3>
+      <h3>Lista de Categorias</h3>
       <br>
       <table class="table">
          <thead>
             <tr>
-               <th scope="col">ID da Marca</th>
-               <th scope="col">Nome da Marca</th>
+               <th scope="col">ID Categoria</th>
+               <th scope="col">Nome da Categoria</th>
                <th scope="col">Ação</th>
             </tr>
          </thead>
          <tr>
             <?php
-            include 'conexao.php';
 
-            $sql = "SELECT * FROM `marca`";
+            $sql = "SELECT * FROM `categoria`";
             $busca = mysqli_query($conexao, $sql);
 
             while ($array = mysqli_fetch_array($busca)) {
-               $id_marca = $array['id_marca'];
-               $marca = $array['marca'];
+               $id_categoria = $array['id_categoria'];
+               $categoria = $array['categoria'];
             ?>
          <tr>
-            <td><?php echo $id_marca ?></td>
-            <td> <?php echo $marca ?></td>
+            <td><?php echo $id_categoria ?></td>
+            <td> <?php echo $categoria ?></td>
 
             <td>
-               <a class="btn btn-warning btn-sm" href="editar_marca.php?id=<?php echo $id_marca ?>" role="button">
+               <a class="btn btn-warning btn-sm" href="../model/editar_categoria.php?id=<?php echo $id_categoria ?>"
+                  role="button">
                   <i class="far fa-edit "></i>&nbsp;Editar</a>
-               <a class="btn btn-danger btn-sm" href="deletar_marca.php?id=<?php echo $id_marca ?>" role="button">
+               <a class="btn btn-danger btn-sm" href="../model/deletar_categoria.php?id=<?php echo $id_categoria ?>"
+                  role="button">
                   <i class="far fa-trash-alt "></i>&nbsp;Excluir</a>
             </td>
+
+
 
          </tr>
          <?php

@@ -26,7 +26,7 @@ $atualizar = mysqli_query($conexao, $sql);
 
    <center>
       <h3>Produto atualizado com sucesso!</h3>
-      <a href="listar_produtos.php" class="btn btn-sm btn-warning">Voltar</a>
+      <a href="../view/listar_produtos.php" class="btn btn-sm btn-warning">Voltar</a>
    </center>
 
 </div>

@@ -3,8 +3,8 @@
 
 <head>
 
-   <title>Adicionar Marca</title>
-   <meta name="viewport" content="initial-scale=1.0, user-scalabe=no" />
+   <title>Adicionar Categoria</title>
+
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
@@ -24,21 +24,21 @@
 <body>
 
    <div class="container" id="tamanhoContainer" style="margin-top: 40px">
-      <h4>Formulário de Cadastro de Marcas
+      <h4>Formulário de Cadastro de Categoria
       </h4>
 
-      <form action="_inserir_marca.php" method="post" style="margin-top: 20px;">
+      <form action="../model/_inserir_categoria.php" method="post" style="margin-top: 20px;">
 
          <div class=" form-group">
-            <label>Nome da Marca</label>
-            <input type="text" name="marca" class="form-control" placeholder="Insira o nome da Marca" required>
+            <label>Nome da Categoria</label>
+            <input type="text" name="categoria" class="form-control" placeholder="Insira o nome da Categoria" required>
             <br>
          </div>
 
-         <button type="submit" id="button-cadastrar" class="btn btn-success">Cadastrar Marca</button>
+         <button type="submit" id="button-cadastrar" class="btn btn-success">Cadastrar Categoria</button>
 
          <div style="text-align: right; margin-top: -38px;">
-            <a href="menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
+            <a href="../view/menu.php" id="button-voltar" class="btn btn-warning">Voltar ao Menu</a>
          </div>
 
 
@@ -49,11 +49,6 @@
 
 
 </body>
-
-
-
-
-
 
 
 <!-- JavaScript Bundle with Popper -->

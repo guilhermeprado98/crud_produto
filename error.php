@@ -2,6 +2,7 @@
    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 <div class="container" style="width: 500px; margin-top: 20px">
+
    <center>
       <h4>ERRO!</h4>
    </center>

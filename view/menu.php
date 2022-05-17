@@ -1,3 +1,10 @@
+<?php
+
+require_once '../model/conexao.php';
+
+?>
+
+
 <html>
 
 <head>
@@ -17,7 +24,6 @@
 
    <?php
 
-   include 'conexao.php';
 
    session_start();
    $usuario = $_SESSION['usuario'];

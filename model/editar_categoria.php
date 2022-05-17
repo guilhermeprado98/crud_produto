@@ -60,7 +60,7 @@ $id = $_GET['id'];
 
          <button type="submit" id="button-cadastrar" class="btn btn-warning">Atualizar</button>
          <div style="text-align: right; margin-top: -35px;">
-            <a href="listar_categoria.php" class="btn btn-warning">Voltar</a>
+            <a href="../view/listar_categoria.php" class="btn btn-warning">Voltar</a>
          </div>
 
 

@@ -1,7 +1,7 @@
 <?php
 
-
 include 'conexao.php';
+
 
 $idproduto = $_POST['idproduto'];
 $nomeproduto = $_POST['nomeproduto'];
@@ -25,7 +25,7 @@ $inserir = mysqli_query($conexao, $sql);
    </center>
    <div style="padding-top: 20px">
       <center>
-         <a href="adicionar_produto.php" role="button" class="btn btn-sm btn-primary">Cadastrar novo Produto</a>
+         <a href="../view/adicionar_produto.php" role="button" class="btn btn-sm btn-primary">Cadastrar novo Produto</a>
       </center>
    </div>
 
