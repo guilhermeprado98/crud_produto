@@ -25,6 +25,7 @@
             <tr>
                <th scope="col">ID Categoria</th>
                <th scope="col">Nome da Categoria</th>
+               <th scope="col">Ação</th>
             </tr>
          </thead>
          <tr>

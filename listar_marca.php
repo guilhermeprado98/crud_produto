@@ -25,6 +25,7 @@
             <tr>
                <th scope="col">ID da Marca</th>
                <th scope="col">Nome da Marca</th>
+               <th scope="col">Ação</th>
             </tr>
          </thead>
          <tr>
